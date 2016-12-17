@@ -1447,7 +1447,7 @@ qrcode.decode = function(d) {
         return qrcode.result
     } else {
         var c = new Image();
-        c.crossOrigin = "Anonymous";
+        c.crossOrigin = src.match(/^(data|blob):/i) != null ? null : "Anonymous";
         c.onload = function() {
             var g = document.getElementById("out-canvas");
             if (g != null) {
