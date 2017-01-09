@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <title>Test</title>
     
@@ -153,37 +153,51 @@
 </head>
 
 <body>
-    <div>
-        <img src="heartlandlogo.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <img src="heartlandlogo.png">
+            </div>
+            
+            <div class="col-xs-12">
+                Need a QR code to scan?
+                <a href="merchant.html" target="_blank">Visit the merchant</a>
+                <br>
+                <br>
+            </div>
+            
+            <div class="col-xs-12">
+                <label>
+                    Scan or Select Image
+                    <input type="file" onchange="handleFiles(this.files)" />
+                </label>
+            </div>
+            
+            <div id="result" class="col-xs-12"></div>
+            
+            <div id="payment_form" style="display:none;"  class="col-xs-12">
+                <dt><label for="iframesCardNumber">Card Number:</label></dt>
+                <dd><div id="iframesCardNumber"></div></dd>
+                <dt><label for="iframesCardExpiration">Card Expiration:</label></dt>
+                <dd><div id="iframesCardExpiration"></div></dd>
+                <dt><label for="iframesCardCvv">Card CVV:</label></dt>
+                <dd><div id="iframesCardCvv"></div></dd>
+                <br />
+                <div id="iframesSubmit"></div>
+            </div>
+            
+            <div id="result_qr" style="display:none;" class="col-xs-12">
+                Optional! <br><br>
+                Show this QR code to the cashier:
+            </div>
+            
+            <div class="col-xs-12">
+                <canvas id="qr-canvas" width="800" height="600"></canvas>
+            </div>
+        </div>
     </div>
-    <div>
-        Need a QR code to scan?
-        <a href="merchant.html" target="_blank">Visit the merchant</a>
-        <br>
-        <br>
-    </div>
-    <div>
-        <label>
-            Scan or Select Image
-            <input type="file" onchange="handleFiles(this.files)" />
-        </label>
-    </div>
-    <div id="result"></div>
-    <div id="payment_form" style="display:none;">
-        <dt><label for="iframesCardNumber">Card Number:</label></dt>
-        <dd><div id="iframesCardNumber"></div></dd>
-        <dt><label for="iframesCardExpiration">Card Expiration:</label></dt>
-        <dd><div id="iframesCardExpiration"></div></dd>
-        <dt><label for="iframesCardCvv">Card CVV:</label></dt>
-        <dd><div id="iframesCardCvv"></div></dd>
-        <br />
-        <div id="iframesSubmit"></div>
-    </div>
-    <div id="result_qr" style="display:none;">
-        Optional! <br><br>
-        Show this QR code to the cashier:
-    </div>
-    <canvas id="qr-canvas" width="800" height="600"></canvas>
+    
     <script type="text/javascript">load();</script>
+    
 </body>
 </html>
