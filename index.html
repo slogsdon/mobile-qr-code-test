@@ -68,8 +68,7 @@
             }
 
             function read(a) {
-                var html = "<br>";
-                html += "<b>" + htmlEntities(a) + "</b><br><br>";
+                var html = "<span>" + htmlEntities(a) + "</span>";
                 document.getElementById("result").innerHTML = html;
                 document.getElementById('payment_form').style.display = 'block';
                 // Create a new `HPS` object with the necessary configuration
